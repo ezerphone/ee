@@ -27,12 +27,11 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          # The following line ensures we use the version from requirements.txt
-          pip install flet 
 
       - name: Build APK
+        # The 'yes' command automatically answers "y" to prompts
         run: |
-          flet build apk --verbose
+          yes | flet build apk --verbose
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
