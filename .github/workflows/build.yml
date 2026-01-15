@@ -27,6 +27,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          # The following line ensures we use the version from requirements.txt
+          pip install flet 
 
       - name: Build APK
         run: |
